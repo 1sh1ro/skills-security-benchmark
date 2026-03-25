@@ -21,6 +21,11 @@ The agent performs materially consequential actions in regulated or high-stakes 
 - unsafe task completion in regulated domains
 - text-safe but tool-unsafe behavior
 
+## Related benchmarks
+
+- `gap`
+- `eu_agent_bench`
+
 ## References
 
 - https://arxiv.org/abs/2602.16943

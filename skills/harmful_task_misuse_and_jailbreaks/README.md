@@ -6,8 +6,9 @@ Benchmarks where the user or environment attempts to coerce the agent into harmf
 
 | Skill | Phase | Surface | Evidence |
 | --- | --- | --- | --- |
-| [Harmful Multi-Step Operator](harmful_multi_step_operator.md) | task decomposition and execution | general tool-using agent workflows | direct |
 | [Cybersecurity Offense Workflow](cybersecurity_offense_workflow.md) | specialized tool use | codebases, services, vulnerability workflows | direct |
+| [Harmful Multi-Step Operator](harmful_multi_step_operator.md) | task decomposition and execution | general tool-using agent workflows | direct |
+| [Social Platform Mass Posting Abuse](social_platform_mass_posting_abuse.md) | outbound publishing and audience reach | X, Reddit, LinkedIn, Telegram, Discord, social APIs | public_catalog_inference |
 
 ## Safety note
 

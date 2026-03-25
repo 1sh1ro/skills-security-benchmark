@@ -21,6 +21,10 @@ A tool or intermediary confuses who requested an action, leading the agent or se
 - cross-session confusion
 - wrong-principal execution
 
+## Related benchmarks
+
+- `mcp_safetybench`
+
 ## References
 
 - https://arxiv.org/abs/2603.07473

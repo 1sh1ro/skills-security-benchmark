@@ -21,6 +21,12 @@ A hidden trigger embedded in model parameters or alignment data activates unsafe
 - conditional policy inversion
 - backdoor-mediated tool misuse
 
+## Related benchmarks
+
+- `poisonbench`
+- `elba_bench`
+- `backdooragent`
+
 ## References
 
 - https://arxiv.org/abs/2410.08811

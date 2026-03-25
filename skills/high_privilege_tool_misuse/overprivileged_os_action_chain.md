@@ -21,6 +21,10 @@ A high-privilege tool chain performs destructive or security-sensitive operation
 - credential exposure path
 - unsafe file or system modification
 
+## Related benchmarks
+
+- `os_harm`
+
 ## References
 
 - https://arxiv.org/abs/2506.14866

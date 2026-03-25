@@ -21,6 +21,11 @@ A tool advertises misleading metadata so the agent chooses it for a task it shou
 - priority inflation
 - unsafe capability framing
 
+## Related benchmarks
+
+- `mcptox`
+- `msb`
+
 ## References
 
 - https://arxiv.org/abs/2508.14925

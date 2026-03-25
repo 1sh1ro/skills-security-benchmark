@@ -21,6 +21,10 @@ Retrieved content is treated as trustworthy context and quietly degrades safety 
 - context poisoning
 - trusted-source abuse
 
+## Related benchmarks
+
+- `ras_eval`
+
 ## References
 
 - https://arxiv.org/abs/2505.14215

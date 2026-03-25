@@ -21,6 +21,11 @@ A crafted URL or redirect chain causes an agent to ingest attacker-controlled co
 - link-preview deception
 - navigation into trap content
 
+## Related benchmarks
+
+- `malurlbench`
+- `wasp`
+
 ## References
 
 - https://arxiv.org/abs/2601.18113

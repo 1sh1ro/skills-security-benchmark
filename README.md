@@ -23,8 +23,20 @@ The repo now has two layers:
 - `benchmarks/`: evaluation suites, datasets, and benchmark-adjacent evidence that help test or justify those skill patterns
 
 Current seeded corpus:
-- 19 redacted skill entries
+- 34 redacted skill entries
 - 27 benchmark or benchmark-adjacent entries
+
+Public skill sources used in addition to papers:
+- OpenClaw official registry docs: https://openclawdoc.com/docs/skills/clawhub/
+- ClawHub Skills Lib directory: https://clawhub-skills.com/
+- Awesome OpenClaw Skills catalog: https://github.com/sundial-org/awesome-openclaw-skills
+- OpenClaw public skills repo: https://github.com/openclaw/openclaw/tree/main/skills
+- OpenAI public skills repo: https://github.com/openai/skills/tree/main/skills
+
+Skill evidence labels used in the corpus:
+- `direct`: the attack pattern is explicitly discussed or demonstrated in agent/skill security work
+- `adjacent`: the pattern is drawn from nearby ecosystems such as model poisoning or package-security research
+- `public_catalog_inference`: the risk is inferred from publicly listed skill capabilities, scopes, or installation surfaces
 
 ## Expanded taxonomy
 

@@ -6,8 +6,8 @@ Attacks that poison tool descriptions, MCP metadata, manifests, names, or respon
 
 | Skill | Phase | Surface | Evidence |
 | --- | --- | --- | --- |
-| [MCP Tool Description Poisoning](mcp_tool_description_poisoning.md) | tool discovery and selection | tool descriptions, manifests, metadata fields | direct |
 | [MCP Caller Identity Confusion](mcp_caller_identity_confusion.md) | authorization and routing | identity fields, caller metadata, cross-server context | direct |
+| [MCP Tool Description Poisoning](mcp_tool_description_poisoning.md) | tool discovery and selection | tool descriptions, manifests, metadata fields | direct |
 
 ## Safety note
 

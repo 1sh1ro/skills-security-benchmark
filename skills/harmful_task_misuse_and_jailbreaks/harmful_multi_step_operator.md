@@ -21,6 +21,11 @@ The agent remains compliant across a sequence of individually plausible steps th
 - stepwise escalation
 - low-refusal multi-step execution
 
+## Related benchmarks
+
+- `agentharm`
+- `safearena`
+
 ## References
 
 - https://arxiv.org/abs/2410.09024

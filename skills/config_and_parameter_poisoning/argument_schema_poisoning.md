@@ -21,6 +21,11 @@ Poisoned parameter defaults or schema descriptions nudge the agent toward a broa
 - scope expansion through args
 - parameter hint manipulation
 
+## Related benchmarks
+
+- `msb`
+- `gap`
+
 ## References
 
 - https://arxiv.org/abs/2510.15994

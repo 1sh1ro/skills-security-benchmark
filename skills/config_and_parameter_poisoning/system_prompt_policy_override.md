@@ -21,6 +21,11 @@ A poisoned configuration changes the agent policy itself, weakening refusal, app
 - approval removal
 - role-policy inversion
 
+## Related benchmarks
+
+- `asb`
+- `backdooragent`
+
 ## References
 
 - https://arxiv.org/abs/2410.02644

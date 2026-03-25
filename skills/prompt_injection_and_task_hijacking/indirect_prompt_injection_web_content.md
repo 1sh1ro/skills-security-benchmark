@@ -21,6 +21,12 @@ Third-party content embeds hidden or overt instructions that cause the agent to 
 - ignore-previous-instructions lure
 - unsafe tool invocation after content ingestion
 
+## Related benchmarks
+
+- `injecagent`
+- `agentdojo`
+- `agentdyn`
+
 ## References
 
 - https://arxiv.org/abs/2403.02691

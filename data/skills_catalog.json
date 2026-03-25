@@ -516,5 +516,419 @@
       "https://arxiv.org/abs/2511.05269"
     ],
     "status": "redacted_public_pattern"
+  },
+  {
+    "id": "credential_vault_secret_exfiltration",
+    "name": "Credential Vault Secret Exfiltration",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "secret retrieval and command execution",
+    "target_surface": "password managers, secret vaults, injected env vars",
+    "attacker_position": "malicious workflow or over-scoped local agent",
+    "artifact": "vault items, secret references, runtime-injected credentials",
+    "privileges_sought": "credential theft and privileged follow-on access",
+    "redacted_skill_summary": "A public secret-management skill is repurposed to read or relay stored credentials, enabling downstream access to unrelated systems.",
+    "representative_behaviors": [
+      "vault item enumeration",
+      "secret relay into other tools",
+      "credential use outside original task scope"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [],
+    "reference_urls": [
+      "https://github.com/openclaw/openclaw/blob/main/skills/1password/SKILL.md",
+      "https://github.com/sundial-org/awesome-openclaw-skills",
+      "https://clawhub-skills.com/"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "source_control_and_ci_mutation",
+    "name": "Source Control and CI Mutation",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "repo administration and workflow automation",
+    "target_surface": "GitHub repositories, pull requests, Actions workflows, CI logs",
+    "attacker_position": "malicious prompt, compromised issue/PR, or over-scoped repo auth",
+    "artifact": "repo contents, workflow YAML, PR comments, run logs",
+    "privileges_sought": "supply-chain mutation, secret exposure, or unauthorized merges",
+    "redacted_skill_summary": "A repo-management skill can be pushed beyond review tasks into mutating CI pipelines, modifying repository state, or extracting sensitive build context.",
+    "representative_behaviors": [
+      "workflow file mutation",
+      "log scraping for secrets or tokens",
+      "repo-side action beyond requested scope"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [
+      "gap"
+    ],
+    "reference_urls": [
+      "https://github.com/openclaw/openclaw/blob/main/skills/github/SKILL.md",
+      "https://github.com/openai/skills/blob/main/skills/.curated/gh-fix-ci/SKILL.md",
+      "https://github.com/sundial-org/awesome-openclaw-skills"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "cloud_deploy_and_dns_mutation",
+    "name": "Cloud Deploy and DNS Mutation",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "deployment and infrastructure administration",
+    "target_surface": "Cloudflare, Vercel, DNS, edge workers, cloud CLIs",
+    "attacker_position": "malicious task framing or over-scoped deploy token",
+    "artifact": "deploy commands, DNS records, routes, env vars, zones",
+    "privileges_sought": "traffic hijack, content replacement, or infrastructure drift",
+    "redacted_skill_summary": "Deployment and infrastructure skills can be abused to repoint traffic, publish altered content, or push unintended infrastructure changes with production impact.",
+    "representative_behaviors": [
+      "DNS record changes",
+      "unexpected production deploy",
+      "edge-config or route mutation"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [
+      "os_harm",
+      "gap"
+    ],
+    "reference_urls": [
+      "https://github.com/openai/skills/blob/main/skills/.curated/cloudflare-deploy/SKILL.md",
+      "https://github.com/sundial-org/awesome-openclaw-skills",
+      "https://clawhub-skills.com/"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "browser_session_account_takeover",
+    "name": "Browser Session Account Takeover",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "browser automation and session reuse",
+    "target_surface": "logged-in browser sessions, forms, anti-bot bypass browsers",
+    "attacker_position": "malicious site, prompt, or workflow author",
+    "artifact": "session cookies, browser actions, form submissions",
+    "privileges_sought": "account actions behind an already-authenticated session",
+    "redacted_skill_summary": "Public browser-automation skills make it easier to drive already-authenticated sessions, turning any task hijack into real account-side effects.",
+    "representative_behaviors": [
+      "unauthorized form submission",
+      "session reuse for sensitive actions",
+      "anti-bot-evasion-assisted automation"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [
+      "os_harm",
+      "malurlbench"
+    ],
+    "reference_urls": [
+      "https://github.com/openai/skills/blob/main/skills/.curated/playwright/SKILL.md",
+      "https://github.com/sundial-org/awesome-openclaw-skills",
+      "https://clawhub-skills.com/"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "communication_impersonation_and_history_mining",
+    "name": "Communication Impersonation and History Mining",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "messaging and communications access",
+    "target_surface": "Slack, Discord, WhatsApp, email, chat history, outbound messaging",
+    "attacker_position": "malicious user, compromised workflow, or over-broad bot token",
+    "artifact": "message history, pinned posts, attachments, outbound messages",
+    "privileges_sought": "social engineering, impersonation, or private data collection",
+    "redacted_skill_summary": "Communication skills collapse reading, searching, and sending into a single capability surface, making impersonation or history mining a high-consequence failure mode.",
+    "representative_behaviors": [
+      "message history harvesting",
+      "third-party messaging without sufficient confirmation",
+      "channel or thread manipulation"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [
+      "openagentsafety"
+    ],
+    "reference_urls": [
+      "https://github.com/openclaw/openclaw/blob/main/skills/slack/SKILL.md",
+      "https://github.com/openclaw/openclaw/blob/main/skills/wacli/SKILL.md",
+      "https://github.com/sundial-org/awesome-openclaw-skills"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "camera_and_sensor_surveillance_abuse",
+    "name": "Camera and Sensor Surveillance Abuse",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "device and sensor access",
+    "target_surface": "RTSP or ONVIF cameras, local peripherals, captured media",
+    "attacker_position": "malicious user request or hijacked automation",
+    "artifact": "snapshots, clips, motion events, camera configs",
+    "privileges_sought": "covert observation and sensitive environment capture",
+    "redacted_skill_summary": "Camera-facing skills can be redirected from legitimate monitoring into opportunistic observation or collection of sensitive visual data.",
+    "representative_behaviors": [
+      "snapshot capture outside intended context",
+      "clip export of sensitive spaces",
+      "motion-trigger abuse"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [
+      "os_harm"
+    ],
+    "reference_urls": [
+      "https://github.com/openclaw/openclaw/blob/main/skills/camsnap/SKILL.md",
+      "https://clawhub-skills.com/",
+      "https://github.com/sundial-org/awesome-openclaw-skills"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "interactive_terminal_session_hijack",
+    "name": "Interactive Terminal Session Hijack",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "interactive CLI control",
+    "target_surface": "tmux sessions, long-running terminals, background agent panes",
+    "attacker_position": "malicious workflow author or compromised peer task",
+    "artifact": "keystrokes, pane output, control characters, session names",
+    "privileges_sought": "command injection into trusted sessions or secret scraping",
+    "redacted_skill_summary": "A session-control skill can steer existing interactive terminals, which is riskier than ordinary shell execution because it inherits session state, auth, and operator trust.",
+    "representative_behaviors": [
+      "keystroke injection into active sessions",
+      "pane scraping for secrets or outputs",
+      "session pivot into already-authenticated tools"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [
+      "openagentsafety"
+    ],
+    "reference_urls": [
+      "https://github.com/openclaw/openclaw/blob/main/skills/tmux/SKILL.md",
+      "https://github.com/sundial-org/awesome-openclaw-skills"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "payment_and_wallet_transaction_abuse",
+    "name": "Payment and Wallet Transaction Abuse",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "financial execution and transfers",
+    "target_surface": "crypto wallets, exchanges, Stripe, brokerage and payment APIs",
+    "attacker_position": "malicious user prompt or hijacked downstream workflow",
+    "artifact": "payment requests, wallet transfers, trade orders, invoices",
+    "privileges_sought": "unauthorized transfer, trading, or purchase activity",
+    "redacted_skill_summary": "Finance-facing skills expose direct economic side effects, so even a small planning failure can become a real transfer, trade, or payment mutation.",
+    "representative_behaviors": [
+      "wallet transfer initiation",
+      "exchange order placement",
+      "billing or subscription mutation"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [
+      "eu_agent_bench",
+      "gap"
+    ],
+    "reference_urls": [
+      "https://clawhub-skills.com/",
+      "https://github.com/sundial-org/awesome-openclaw-skills"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "workspace_document_bulk_export",
+    "name": "Workspace Document Bulk Export",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "workspace and knowledge-base access",
+    "target_surface": "Google Workspace, Notion, Apple Notes, document stores, email-linked files",
+    "attacker_position": "malicious prompt or over-scoped OAuth integration",
+    "artifact": "docs, notes, attachments, drives, calendars, contacts",
+    "privileges_sought": "bulk sensitive data access and relay",
+    "redacted_skill_summary": "Workspace skills often span mail, files, notes, and calendars, which makes them especially prone to silent over-collection once broad access is granted.",
+    "representative_behaviors": [
+      "multi-document export",
+      "cross-app knowledge harvest",
+      "workspace search beyond user intent"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [
+      "openagentsafety"
+    ],
+    "reference_urls": [
+      "https://github.com/sundial-org/awesome-openclaw-skills",
+      "https://clawhub-skills.com/",
+      "https://github.com/openclaw/openclaw/blob/main/skills/apple-notes/SKILL.md"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "oauth_scope_overcollection",
+    "name": "OAuth Scope Overcollection",
+    "category_id": "config_and_parameter_poisoning",
+    "execution_phase": "account linking and authorization",
+    "target_surface": "OAuth consent flows, refresh tokens, multi-service scopes",
+    "attacker_position": "skill author or overly broad integration setup",
+    "artifact": "OAuth config, granted scopes, persistent refresh tokens",
+    "privileges_sought": "standing access across mail, docs, chat, or cloud resources",
+    "redacted_skill_summary": "Public productivity and communication skills frequently normalize broad OAuth grants, creating a hidden long-lived privilege surface that outlasts the original task.",
+    "representative_behaviors": [
+      "over-broad scope request",
+      "multi-service token reuse",
+      "standing access after one-off setup"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [
+      "gap"
+    ],
+    "reference_urls": [
+      "https://github.com/sundial-org/awesome-openclaw-skills",
+      "https://clawhub-skills.com/",
+      "https://github.com/openclaw/openclaw/blob/main/skills/slack/SKILL.md"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "social_platform_mass_posting_abuse",
+    "name": "Social Platform Mass Posting Abuse",
+    "category_id": "harmful_task_misuse_and_jailbreaks",
+    "execution_phase": "outbound publishing and audience reach",
+    "target_surface": "X, Reddit, LinkedIn, Telegram, Discord, social APIs",
+    "attacker_position": "malicious user or hijacked content workflow",
+    "artifact": "posts, replies, DMs, channel messages, media uploads",
+    "privileges_sought": "spam, manipulation, impersonation, or coordinated posting",
+    "redacted_skill_summary": "Social publishing skills allow one prompt to become many outward-facing actions, turning routine content automation into a scalable abuse channel.",
+    "representative_behaviors": [
+      "multi-channel posting",
+      "impersonating brand or operator voice",
+      "coordinated social amplification"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "public_catalog_inference",
+    "related_benchmarks": [
+      "agentharm"
+    ],
+    "reference_urls": [
+      "https://github.com/sundial-org/awesome-openclaw-skills",
+      "https://clawhub-skills.com/",
+      "https://github.com/openclaw/openclaw/blob/main/skills/slack/SKILL.md"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "abandoned_repository_skill_hijack",
+    "name": "Abandoned Repository Skill Hijack",
+    "category_id": "dependency_supply_chain_poisoning",
+    "execution_phase": "distribution, updates, and source resolution",
+    "target_surface": "skill source repositories and update channels",
+    "attacker_position": "repository hijacker or new maintainer of abandoned source",
+    "artifact": "GitHub repository ownership, tagged releases, install source refs",
+    "privileges_sought": "silent skill takeover through trusted install paths",
+    "redacted_skill_summary": "When a skill points to an abandoned repository, the trust anchor can shift without the user noticing, enabling a later source-level takeover.",
+    "representative_behaviors": [
+      "repo ownership change after abandonment",
+      "trusted update source drift",
+      "malicious replacement under old skill identity"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "synthchain"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2603.16572",
+      "https://openclawdoc.com/docs/skills/clawhub/"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "semantic_behavior_mismatch_listing",
+    "name": "Semantic-Behavior Mismatch Listing",
+    "category_id": "benchmark_coverage_and_meta_audit",
+    "execution_phase": "marketplace review and installation",
+    "target_surface": "SKILL.md, README, listing metadata, repository behavior",
+    "attacker_position": "skill publisher",
+    "artifact": "descriptions, docs, repository code",
+    "privileges_sought": "passing description-only reviews while hiding risk in behavior",
+    "redacted_skill_summary": "A skill can look benign in its description while repository contents or runtime behavior implement a very different and riskier capability.",
+    "representative_behaviors": [
+      "description-code incongruence",
+      "benign README with risky implementation",
+      "review bypass via semantic framing"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "safeaudit"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2603.16572",
+      "https://arxiv.org/abs/2603.21019",
+      "https://openclawdoc.com/docs/skills/clawhub/"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "inter_skill_combinatorial_risk",
+    "name": "Inter-Skill Combinatorial Risk",
+    "category_id": "benchmark_coverage_and_meta_audit",
+    "execution_phase": "multi-skill planning and collaborative invocation",
+    "target_surface": "cross-skill data flow, chaining, and delegated execution",
+    "attacker_position": "benign-looking but risky skill composition",
+    "artifact": "outputs and permissions flowing between skills",
+    "privileges_sought": "harmful emergent behavior from individually benign skills",
+    "redacted_skill_summary": "The risk comes not from one skill alone but from how multiple skills combine, letting outputs or permissions compound into a capability none of them obviously advertises alone.",
+    "representative_behaviors": [
+      "unsafe cross-skill chaining",
+      "output-to-input privilege amplification",
+      "emergent harmful workflow"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "safeaudit"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2603.21019",
+      "https://clawhub-skills.com/"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "popularity_signal_laundering",
+    "name": "Popularity Signal Laundering",
+    "category_id": "benchmark_coverage_and_meta_audit",
+    "execution_phase": "discovery, ranking, and installation",
+    "target_surface": "downloads, ratings, badges, marketplace ranking signals",
+    "attacker_position": "skill publisher or marketplace manipulator",
+    "artifact": "public trust signals and recommendation surfaces",
+    "privileges_sought": "unsafe installs driven by social proof rather than code trust",
+    "redacted_skill_summary": "Marketplace trust signals can make risky skills appear safer than they are, especially when users substitute popularity or badges for technical review.",
+    "representative_behaviors": [
+      "install decision driven by download count",
+      "trust badge overreach",
+      "ranking-assisted risky adoption"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [],
+    "reference_urls": [
+      "https://arxiv.org/abs/2603.21019",
+      "https://openclawdoc.com/docs/skills/clawhub/"
+    ],
+    "status": "redacted_public_pattern"
   }
 ]

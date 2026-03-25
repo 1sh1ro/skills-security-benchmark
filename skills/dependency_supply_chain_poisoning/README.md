@@ -6,6 +6,7 @@ Malicious packages, dependency confusion, poisoned updates, build-time compromis
 
 | Skill | Phase | Surface | Evidence |
 | --- | --- | --- | --- |
+| [Abandoned Repository Skill Hijack](abandoned_repository_skill_hijack.md) | distribution, updates, and source resolution | skill source repositories and update channels | direct |
 | [Dependency Confusion Skill Package](dependency_confusion_skill_package.md) | installation and dependency resolution | package registries and dependency manifests | adjacent |
 | [Risky Dependency Update Skill](risky_dependency_update_agent.md) | maintenance and automated updates | dependency upgrade pull requests and version selection | direct |
 

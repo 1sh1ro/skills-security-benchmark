@@ -21,6 +21,12 @@ A malicious package is positioned so agent-managed installs resolve to the attac
 - registry precedence abuse
 - install-time compromise
 
+## Related benchmarks
+
+- `oscar`
+- `qut_dv25`
+- `synthchain`
+
 ## References
 
 - https://arxiv.org/abs/2409.09356

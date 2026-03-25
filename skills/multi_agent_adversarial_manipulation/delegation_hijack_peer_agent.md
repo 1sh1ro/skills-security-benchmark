@@ -21,6 +21,10 @@ A compromised or adversarial peer agent manipulates another agent into taking ha
 - cross-agent coercion
 - unsafe delegated execution
 
+## Related benchmarks
+
+- `bad_acts`
+
 ## References
 
 - https://arxiv.org/abs/2508.16481

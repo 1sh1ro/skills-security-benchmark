@@ -21,6 +21,10 @@ A malicious note or plan fragment is planted into memory so that a later, otherw
 - plan replay
 - unsafe memory recall
 
+## Related benchmarks
+
+- `backdooragent`
+
 ## References
 
 - https://arxiv.org/abs/2601.04566
