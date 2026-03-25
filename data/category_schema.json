@@ -1,0 +1,107 @@
+[
+  {
+    "id": "prompt_injection_and_task_hijacking",
+    "title": "Prompt Injection and Task Hijacking",
+    "summary": "Malicious instructions embedded in web pages, tool outputs, emails, URLs, or third-party content redirect the agent away from the user objective.",
+    "subcategories": [
+      "indirect prompt injection",
+      "tool-output injection",
+      "web-agent hijacking",
+      "malicious URL processing",
+      "prompt-injection detection"
+    ]
+  },
+  {
+    "id": "tool_metadata_and_mcp_poisoning",
+    "title": "Tool Metadata and MCP Poisoning",
+    "summary": "Attacks that poison tool descriptions, MCP metadata, manifests, names, or response channels before or during tool selection and invocation.",
+    "subcategories": [
+      "tool description poisoning",
+      "name collision",
+      "user impersonation",
+      "false error escalation",
+      "tool transfer",
+      "retrieval injection"
+    ]
+  },
+  {
+    "id": "dependency_supply_chain_poisoning",
+    "title": "Dependency and Supply Chain Poisoning",
+    "summary": "Malicious packages, dependency confusion, poisoned updates, build-time compromise, or install-time payloads affecting skills, plugins, or agent runtimes.",
+    "subcategories": [
+      "malicious package",
+      "dependency confusion",
+      "install-time payload",
+      "post-install runtime abuse",
+      "update-channel compromise"
+    ]
+  },
+  {
+    "id": "config_and_parameter_poisoning",
+    "title": "Config and Parameter Poisoning",
+    "summary": "Poisoning system prompts, tool schemas, argument defaults, preference-learning data, PEFT adapters, or hidden backdoor triggers that alter downstream behavior.",
+    "subcategories": [
+      "system prompt poisoning",
+      "schema poisoning",
+      "argument manipulation",
+      "preference-learning data poisoning",
+      "PEFT backdoor",
+      "plan-of-thought backdoor"
+    ]
+  },
+  {
+    "id": "memory_and_retrieval_poisoning",
+    "title": "Memory and Retrieval Poisoning",
+    "summary": "Poisoned memories, RAG stores, prior plans, or retrieved artifacts persist across turns and influence future tool use.",
+    "subcategories": [
+      "memory poisoning",
+      "retrieval poisoning",
+      "vector-store contamination",
+      "plan replay"
+    ]
+  },
+  {
+    "id": "high_privilege_tool_misuse",
+    "title": "High-Privilege Tool Misuse",
+    "summary": "Unauthorized or unsafe actions via tools with real-world side effects, especially in OS, browser, finance, healthcare, legal, or infra contexts.",
+    "subcategories": [
+      "permission escalation",
+      "regulated-domain misuse",
+      "unsafe function calling",
+      "real-world side effects",
+      "illegal or policy-violating actions"
+    ]
+  },
+  {
+    "id": "harmful_task_misuse_and_jailbreaks",
+    "title": "Harmful Task Misuse and Jailbreaks",
+    "summary": "Benchmarks where the user or environment attempts to coerce the agent into harmful multi-step behavior while preserving capability.",
+    "subcategories": [
+      "malicious task execution",
+      "jailbreak-enabled agent misuse",
+      "deliberate user misuse",
+      "harms across fraud, cybercrime, harassment"
+    ]
+  },
+  {
+    "id": "multi_agent_adversarial_manipulation",
+    "title": "Multi-Agent Adversarial Manipulation",
+    "summary": "One compromised agent or message channel manipulates peer agents to perform unsafe actions.",
+    "subcategories": [
+      "compromised peer agent",
+      "message poisoning",
+      "cross-agent coercion",
+      "delegation hijacking"
+    ]
+  },
+  {
+    "id": "benchmark_coverage_and_meta_audit",
+    "title": "Benchmark Coverage and Meta-Audit",
+    "summary": "Benchmarks or audit frameworks that test the completeness and blind spots of existing agent-safety suites.",
+    "subcategories": [
+      "coverage audit",
+      "residual unsafe behavior discovery",
+      "meta-benchmarking"
+    ]
+  }
+]

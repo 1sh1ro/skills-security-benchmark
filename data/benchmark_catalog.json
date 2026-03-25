@@ -1,0 +1,352 @@
+[
+  {
+    "id": "toolemu",
+    "name": "ToolEmu",
+    "year": 2023,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "high_privilege_tool_misuse",
+      "harmful_task_misuse_and_jailbreaks"
+    ],
+    "focus": "LM-emulated sandbox for discovering high-stakes failures in tool-using agents.",
+    "coverage": "36 high-stakes tools and 144 test cases",
+    "source_url": "https://arxiv.org/abs/2309.15817"
+  },
+  {
+    "id": "r_judge",
+    "name": "R-Judge",
+    "year": 2024,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "high_privilege_tool_misuse",
+      "harmful_task_misuse_and_jailbreaks"
+    ],
+    "focus": "Safety-risk awareness benchmark over agent interaction traces.",
+    "coverage": "569 multi-turn records, 27 risk scenarios, 5 app categories, 10 risk types",
+    "source_url": "https://arxiv.org/abs/2401.10019"
+  },
+  {
+    "id": "injecagent",
+    "name": "InjecAgent",
+    "year": 2024,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "prompt_injection_and_task_hijacking",
+      "high_privilege_tool_misuse"
+    ],
+    "focus": "Indirect prompt injection benchmark for tool-integrated LLM agents.",
+    "coverage": "1,054 test cases, 17 user tools, 62 attacker tools",
+    "source_url": "https://arxiv.org/abs/2403.02691"
+  },
+  {
+    "id": "agentdojo",
+    "name": "AgentDojo",
+    "year": 2024,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "prompt_injection_and_task_hijacking"
+    ],
+    "focus": "Dynamic environment for evaluating prompt injection attacks and defenses.",
+    "coverage": "97 realistic tasks and 629 security test cases",
+    "source_url": "https://arxiv.org/abs/2406.13352"
+  },
+  {
+    "id": "agent_safetybench",
+    "name": "Agent-SafetyBench",
+    "year": 2024,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "prompt_injection_and_task_hijacking",
+      "high_privilege_tool_misuse",
+      "harmful_task_misuse_and_jailbreaks"
+    ],
+    "focus": "Comprehensive benchmark for general agent safety evaluation.",
+    "coverage": "349 interaction environments, 2,000 test cases, 8 risk categories",
+    "source_url": "https://arxiv.org/abs/2412.14470"
+  },
+  {
+    "id": "asb",
+    "name": "Agent Security Bench (ASB)",
+    "year": 2024,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "prompt_injection_and_task_hijacking",
+      "config_and_parameter_poisoning",
+      "memory_and_retrieval_poisoning",
+      "high_privilege_tool_misuse"
+    ],
+    "focus": "Formalizes and benchmarks attacks and defenses across multiple agent stages.",
+    "coverage": "10 scenarios, 10 agents, 400+ tools, 27 attack/defense methods",
+    "source_url": "https://arxiv.org/abs/2410.02644"
+  },
+  {
+    "id": "agentharm",
+    "name": "AgentHarm",
+    "year": 2024,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "harmful_task_misuse_and_jailbreaks",
+      "high_privilege_tool_misuse"
+    ],
+    "focus": "Measures harmful multi-step behavior of LLM agents under misuse and jailbreaks.",
+    "coverage": "110 malicious tasks, 440 with augmentations, 11 harm categories",
+    "source_url": "https://arxiv.org/abs/2410.09024"
+  },
+  {
+    "id": "openagentsafety",
+    "name": "OpenAgentSafety",
+    "year": 2025,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "high_privilege_tool_misuse",
+      "harmful_task_misuse_and_jailbreaks",
+      "prompt_injection_and_task_hijacking"
+    ],
+    "focus": "Real-tool agent safety framework spanning browsers, code execution, filesystems, bash, and messaging.",
+    "coverage": "350+ multi-turn multi-user tasks across 8 risk categories",
+    "source_url": "https://arxiv.org/abs/2507.06134"
+  },
+  {
+    "id": "wasp",
+    "name": "WASP",
+    "year": 2025,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "prompt_injection_and_task_hijacking"
+    ],
+    "focus": "End-to-end benchmark for realistic web-agent prompt injection attacks.",
+    "coverage": "Realistic web-agent scenarios with partial attack success up to 86%",
+    "source_url": "https://arxiv.org/abs/2504.18575"
+  },
+  {
+    "id": "wainjectbench",
+    "name": "WAInjectBench",
+    "year": 2025,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "prompt_injection_and_task_hijacking",
+      "benchmark_coverage_and_meta_audit"
+    ],
+    "focus": "Benchmark for prompt-injection detection methods in web agents, including text and image attacks.",
+    "coverage": "Fine-grained text and image attack/benign datasets for detector evaluation",
+    "source_url": "https://arxiv.org/abs/2510.01354"
+  },
+  {
+    "id": "ras_eval",
+    "name": "RAS-Eval",
+    "year": 2025,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "prompt_injection_and_task_hijacking",
+      "tool_metadata_and_mcp_poisoning",
+      "high_privilege_tool_misuse"
+    ],
+    "focus": "Comprehensive security benchmark supporting simulated and real-world tool execution.",
+    "coverage": "80 test cases, 3,802 attack tasks, 11 CWE categories",
+    "source_url": "https://arxiv.org/abs/2506.15253"
+  },
+  {
+    "id": "os_harm",
+    "name": "OS-Harm",
+    "year": 2025,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "high_privilege_tool_misuse",
+      "prompt_injection_and_task_hijacking",
+      "harmful_task_misuse_and_jailbreaks"
+    ],
+    "focus": "Safety benchmark for computer-use agents built on OSWorld.",
+    "coverage": "150 tasks across deliberate misuse, prompt injection, and model misbehavior",
+    "source_url": "https://arxiv.org/abs/2506.14866"
+  },
+  {
+    "id": "bad_acts",
+    "name": "BAD-ACTS",
+    "year": 2025,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "multi_agent_adversarial_manipulation",
+      "harmful_task_misuse_and_jailbreaks"
+    ],
+    "focus": "Adversarial robustness benchmark for multi-agent systems under harmful-action induction.",
+    "coverage": "4 agentic systems and 188 harmful-action examples",
+    "source_url": "https://arxiv.org/abs/2508.16481"
+  },
+  {
+    "id": "eu_agent_bench",
+    "name": "EU-Agent-Bench",
+    "year": 2025,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "high_privilege_tool_misuse",
+      "harmful_task_misuse_and_jailbreaks"
+    ],
+    "focus": "Legal-compliance benchmark for measuring illegal behavior of agents under EU law.",
+    "coverage": "Human-curated legal benchmark with public preview and held-out private test",
+    "source_url": "https://arxiv.org/abs/2510.21524"
+  },
+  {
+    "id": "mcptox",
+    "name": "MCPTox",
+    "year": 2025,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "tool_metadata_and_mcp_poisoning"
+    ],
+    "focus": "Systematic benchmark for MCP tool poisoning via malicious metadata without execution.",
+    "coverage": "45 live MCP servers, 353 tools, 1,312 malicious test cases, 10 risk categories",
+    "source_url": "https://arxiv.org/abs/2508.14925"
+  },
+  {
+    "id": "msb",
+    "name": "MCP Security Bench (MSB)",
+    "year": 2025,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "tool_metadata_and_mcp_poisoning",
+      "config_and_parameter_poisoning",
+      "high_privilege_tool_misuse"
+    ],
+    "focus": "End-to-end evaluation of MCP-specific attacks across planning, invocation, and response handling.",
+    "coverage": "12 attack types, 10 domains, 405 tools, 2,000 attack instances",
+    "source_url": "https://arxiv.org/abs/2510.15994"
+  },
+  {
+    "id": "mcp_safetybench",
+    "name": "MCP-SafetyBench",
+    "year": 2025,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "tool_metadata_and_mcp_poisoning",
+      "high_privilege_tool_misuse",
+      "prompt_injection_and_task_hijacking"
+    ],
+    "focus": "Multi-turn safety benchmark on real MCP servers with cross-server workflows.",
+    "coverage": "5 domains and 20 MCP attack types spanning server, host, and user sides",
+    "source_url": "https://arxiv.org/abs/2512.15163"
+  },
+  {
+    "id": "malurlbench",
+    "name": "MalURLBench",
+    "year": 2026,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "prompt_injection_and_task_hijacking"
+    ],
+    "focus": "Benchmark for malicious-URL handling failures in web agents.",
+    "coverage": "61,845 attack instances, 10 scenarios, 7 malicious-site categories",
+    "source_url": "https://arxiv.org/abs/2601.18113"
+  },
+  {
+    "id": "agentdyn",
+    "name": "AgentDyn",
+    "year": 2026,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "prompt_injection_and_task_hijacking"
+    ],
+    "focus": "Dynamic open-ended prompt injection benchmark for real-world agent systems.",
+    "coverage": "60 open-ended tasks and 560 injection test cases",
+    "source_url": "https://arxiv.org/abs/2602.03117"
+  },
+  {
+    "id": "gap",
+    "name": "GAP",
+    "year": 2026,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "high_privilege_tool_misuse",
+      "config_and_parameter_poisoning"
+    ],
+    "focus": "Measures divergence between text-level refusal and actual tool-call safety.",
+    "coverage": "6 models, 6 regulated domains, 7 jailbreak scenarios, 17,420 datapoints",
+    "source_url": "https://arxiv.org/abs/2602.16943"
+  },
+  {
+    "id": "backdooragent",
+    "name": "BackdoorAgent",
+    "year": 2026,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "config_and_parameter_poisoning",
+      "memory_and_retrieval_poisoning",
+      "high_privilege_tool_misuse"
+    ],
+    "focus": "Stage-aware backdoor benchmark covering planning, memory, and tool-use attacks.",
+    "coverage": "4 agent applications spanning QA, code, web, and drive",
+    "source_url": "https://arxiv.org/abs/2601.04566"
+  },
+  {
+    "id": "safeaudit",
+    "name": "SafeAudit",
+    "year": 2026,
+    "evidence_tier": "direct",
+    "primary_categories": [
+      "benchmark_coverage_and_meta_audit"
+    ],
+    "focus": "Meta-audit framework for enumerating uncovered unsafe tool-call workflows.",
+    "coverage": "Audits 3 benchmarks and 12 environments; finds >20% residual unsafe behaviors",
+    "source_url": "https://arxiv.org/abs/2603.18245"
+  },
+  {
+    "id": "poisonbench",
+    "name": "PoisonBench",
+    "year": 2024,
+    "evidence_tier": "adjacent",
+    "primary_categories": [
+      "config_and_parameter_poisoning"
+    ],
+    "focus": "Data-poisoning benchmark for preference learning in LLM alignment pipelines.",
+    "coverage": "2 attack types, 8 realistic scenarios, 21 models",
+    "source_url": "https://arxiv.org/abs/2410.08811"
+  },
+  {
+    "id": "elba_bench",
+    "name": "ELBA-Bench",
+    "year": 2025,
+    "evidence_tier": "adjacent",
+    "primary_categories": [
+      "config_and_parameter_poisoning"
+    ],
+    "focus": "Unified benchmark for LLM backdoor attacks via PEFT or no-finetune methods.",
+    "coverage": "1,300+ experiments, 12 attack methods, 18 datasets, 12 LLMs",
+    "source_url": "https://arxiv.org/abs/2502.18511"
+  },
+  {
+    "id": "oscar",
+    "name": "OSCAR Benchmark Dataset",
+    "year": 2024,
+    "evidence_tier": "adjacent",
+    "primary_categories": [
+      "dependency_supply_chain_poisoning"
+    ],
+    "focus": "Dynamic benchmark dataset for open-source supply-chain poisoning detection in NPM and PyPI.",
+    "coverage": "Real-world malicious and benign package benchmark; F1 0.95 on NPM and 0.91 on PyPI",
+    "source_url": "https://arxiv.org/abs/2409.09356"
+  },
+  {
+    "id": "qut_dv25",
+    "name": "QUT-DV25",
+    "year": 2025,
+    "evidence_tier": "adjacent",
+    "primary_categories": [
+      "dependency_supply_chain_poisoning"
+    ],
+    "focus": "Dynamic analysis dataset for next-gen PyPI supply-chain attacks.",
+    "coverage": "14,271 packages, 7,127 malicious, 36 real-time features",
+    "source_url": "https://arxiv.org/abs/2505.13804"
+  },
+  {
+    "id": "synthchain",
+    "name": "SynthChain",
+    "year": 2026,
+    "evidence_tier": "adjacent",
+    "primary_categories": [
+      "dependency_supply_chain_poisoning",
+      "benchmark_coverage_and_meta_audit"
+    ],
+    "focus": "Synthetic benchmark and forensic dataset for advanced, stealthy software supply-chain attacks.",
+    "coverage": "7 supply-chain scenarios, 0.58M raw events, 1.50M evaluation rows",
+    "source_url": "https://arxiv.org/abs/2603.16694"
+  }
+]
