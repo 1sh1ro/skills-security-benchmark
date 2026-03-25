@@ -1,8 +1,8 @@
 # skills-security-benchmark
 
-A curated benchmark map for harmful or unsafe agent skills, tool-use behaviors, MCP servers, plugins, and adjacent supply-chain attacks.
+A curated harmful-skill corpus and benchmark map for unsafe agent skills, tool-use behaviors, MCP servers, plugins, and adjacent supply-chain attacks.
 
-This repository is meant for defensive evaluation and security research. It intentionally stores taxonomy, benchmark metadata, and source references only; it does not include ready-to-run exploit payloads or harmful skill prompts.
+This repository is meant for defensive evaluation and security research. It stores taxonomy, redacted skill metadata, benchmark metadata, and source references only; it does not include ready-to-run exploit payloads, harmful skill prompts, or live malicious code.
 
 Curation date: 2026-03-25
 
@@ -15,6 +15,16 @@ In this repo, "skill" is treated broadly:
 - memory / retrieval pipelines
 - prompt templates and agent configs
 - runtime dependencies and package supply chains
+
+## Repo focus
+
+The repo now has two layers:
+- `skills/`: redacted harmful-skill entries, organized by category, with metadata and references
+- `benchmarks/`: evaluation suites, datasets, and benchmark-adjacent evidence that help test or justify those skill patterns
+
+Current seeded corpus:
+- 19 redacted skill entries
+- 27 benchmark or benchmark-adjacent entries
 
 ## Expanded taxonomy
 
@@ -91,9 +101,20 @@ Even after expanding the catalog, several gaps remain under-covered:
 
 ## Repo layout
 
-The repo now includes both a top-level catalog and category-specific indices:
+The repo now includes both skill and benchmark catalogs:
 
 ```text
+skills/
+  README.md
+  prompt_injection_and_task_hijacking/
+  tool_metadata_and_mcp_poisoning/
+  dependency_supply_chain_poisoning/
+  config_and_parameter_poisoning/
+  memory_and_retrieval_poisoning/
+  high_privilege_tool_misuse/
+  harmful_task_misuse_and_jailbreaks/
+  multi_agent_adversarial_manipulation/
+
 benchmarks/
   README.md
   prompt_injection_and_task_hijacking/
@@ -110,12 +131,19 @@ data/
   benchmark_catalog.csv
   benchmark_catalog.json
   category_schema.json
+  skill_schema.json
+  skills_catalog.csv
+  skills_catalog.json
   leaderboard_columns.csv
   leaderboard_schema.json
   leaderboard_template.csv
 ```
 
 Notes:
+- `skills/README.md` is the harmful-skill index.
+- Each `skills/<category>/` directory contains redacted skill entries for that family.
+- `data/skills_catalog.json` is the canonical machine-readable skill source.
+- `data/skills_catalog.csv` is the flat export for spreadsheet workflows.
 - `benchmarks/README.md` is the category index.
 - Each `benchmarks/<category>/README.md` file lists the mapped benchmarks for that family.
 - `data/benchmark_catalog.json` is the canonical machine-readable source.
@@ -124,6 +152,12 @@ Notes:
 - `data/leaderboard_template.csv` gives a starter row for recording evals.
 
 ## How to extend it
+
+When adding a new skill:
+- add or update the canonical entry in `data/skills_catalog.json`
+- mirror the flat row in `data/skills_catalog.csv`
+- create or update the redacted markdown entry under `skills/<category>/`
+- never add runnable payloads, real exploit strings, or directly reusable malicious prompts
 
 When adding a new benchmark:
 - add or update the canonical entry in `data/benchmark_catalog.json`
@@ -183,3 +217,19 @@ Primary sources used for this initial catalog:
 - OSCAR benchmark dataset: https://arxiv.org/abs/2409.09356
 - QUT-DV25: https://arxiv.org/abs/2505.13804
 - SynthChain: https://arxiv.org/abs/2603.16694
+
+Additional sources used for the seeded skill corpus:
+- SafeArena: https://arxiv.org/abs/2503.04957
+- VPI-Bench: https://arxiv.org/abs/2506.02456
+- RedTeamCUA: https://arxiv.org/abs/2505.21936
+- WebTrap Park: https://arxiv.org/abs/2601.08406
+- SusBench: https://doi.org/10.1145/3742413.3789111
+- Measuring Harmfulness of Computer-Using Agents: https://arxiv.org/abs/2508.00935
+- AgentSentinel / BadComputerUse: https://arxiv.org/abs/2509.07764
+- Understanding Security Risks of AI Agents' Dependency Updates: https://arxiv.org/abs/2601.00205
+- Caller Identity Confusion in MCP-Based AI Systems: https://arxiv.org/abs/2603.07473
+- Misleading Tool Descriptions in MCP: https://arxiv.org/abs/2602.03580
+- Information Retrieval Induced Safety Degradation in AI Agents: https://arxiv.org/abs/2505.14215
+- RedTeamAI: https://doi.org/10.31219/osf.io/36jm5_v1
+- BountyBench: https://arxiv.org/abs/2505.15216
+- TAMAS: https://arxiv.org/abs/2511.05269

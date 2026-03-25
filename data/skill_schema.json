@@ -1,0 +1,87 @@
+{
+  "name": "harmful-skill schema",
+  "version": "1.0.0",
+  "description": "Schema for storing redacted harmful-skill entries for defensive research, evaluation, and detection. Entries describe attack patterns and artifacts without including runnable malicious payloads.",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "category_id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "execution_phase",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "target_surface",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "attacker_position",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "artifact",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "privileges_sought",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "redacted_skill_summary",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "representative_behaviors",
+      "type": "array<string>",
+      "required": true
+    },
+    {
+      "name": "payload_included",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "live_code_included",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "evidence_basis",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "related_benchmarks",
+      "type": "array<string>",
+      "required": false
+    },
+    {
+      "name": "reference_urls",
+      "type": "array<string>",
+      "required": true
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "required": true
+    }
+  ]
+}

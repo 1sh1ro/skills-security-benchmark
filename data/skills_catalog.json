@@ -1,0 +1,520 @@
+[
+  {
+    "id": "indirect_prompt_injection_web_content",
+    "name": "Indirect Prompt Injection via Web Content",
+    "category_id": "prompt_injection_and_task_hijacking",
+    "execution_phase": "context ingestion",
+    "target_surface": "web pages, documents, emails, rendered content",
+    "attacker_position": "remote content author",
+    "artifact": "HTML, markdown, email body, document text",
+    "privileges_sought": "goal redirection and unsafe downstream actions",
+    "redacted_skill_summary": "Third-party content embeds hidden or overt instructions that cause the agent to ignore the user objective and follow attacker-defined steps.",
+    "representative_behaviors": [
+      "goal rewriting",
+      "ignore-previous-instructions lure",
+      "unsafe tool invocation after content ingestion"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "injecagent",
+      "agentdojo",
+      "agentdyn"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2403.02691",
+      "https://arxiv.org/abs/2406.13352",
+      "https://arxiv.org/abs/2602.03117"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "malicious_url_redirect_skill",
+    "name": "Malicious URL and Redirect Processing",
+    "category_id": "prompt_injection_and_task_hijacking",
+    "execution_phase": "navigation and browsing",
+    "target_surface": "URLs, redirects, landing pages, preview content",
+    "attacker_position": "remote website operator",
+    "artifact": "URL strings, redirect chains, hostile pages",
+    "privileges_sought": "navigation control and phishing-style action steering",
+    "redacted_skill_summary": "A crafted URL or redirect chain causes an agent to ingest attacker-controlled content or navigate into an unsafe workflow that changes the plan.",
+    "representative_behaviors": [
+      "hostile redirect sequence",
+      "link-preview deception",
+      "navigation into trap content"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "malurlbench",
+      "wasp"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2601.18113",
+      "https://arxiv.org/abs/2504.18575"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "visual_prompt_injection_overlay",
+    "name": "Visual Prompt Injection Overlay",
+    "category_id": "prompt_injection_and_task_hijacking",
+    "execution_phase": "screen perception and grounding",
+    "target_surface": "screenshots, UI overlays, rendered images",
+    "attacker_position": "remote page or UI manipulator",
+    "artifact": "visual overlay, deceptive screenshot element, image text",
+    "privileges_sought": "unsafe click or form submission",
+    "redacted_skill_summary": "A visual-only cue or overlay exploits perception in computer-use agents so they take unsafe actions without a textual prompt attack.",
+    "representative_behaviors": [
+      "screen-level instruction lure",
+      "visual misdirection",
+      "unsafe click sequence"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [],
+    "reference_urls": [
+      "https://arxiv.org/abs/2506.02456"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "dark_pattern_workflow_manipulation",
+    "name": "Dark-Pattern Workflow Manipulation",
+    "category_id": "prompt_injection_and_task_hijacking",
+    "execution_phase": "interactive workflow execution",
+    "target_surface": "web forms, consent dialogs, deceptive page layouts",
+    "attacker_position": "website operator",
+    "artifact": "misleading forms, consent banners, dark-pattern UI",
+    "privileges_sought": "consent capture, policy bypass, accidental unsafe completion",
+    "redacted_skill_summary": "A deceptive UI steers the agent into completing harmful or unwanted actions while the nominal task still appears plausible.",
+    "representative_behaviors": [
+      "deceptive consent flow",
+      "misleading button hierarchy",
+      "harmful task completion under false framing"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [],
+    "reference_urls": [
+      "https://doi.org/10.1145/3742413.3789111",
+      "https://arxiv.org/abs/2503.04957"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "mcp_tool_description_poisoning",
+    "name": "MCP Tool Description Poisoning",
+    "category_id": "tool_metadata_and_mcp_poisoning",
+    "execution_phase": "tool discovery and selection",
+    "target_surface": "tool descriptions, manifests, metadata fields",
+    "attacker_position": "tool or server author",
+    "artifact": "description text, manifest metadata, server-exposed fields",
+    "privileges_sought": "tool-selection bias and unsafe invocation",
+    "redacted_skill_summary": "A tool advertises misleading metadata so the agent chooses it for a task it should not handle or trusts it more than it should.",
+    "representative_behaviors": [
+      "misleading tool summary",
+      "priority inflation",
+      "unsafe capability framing"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "mcptox",
+      "msb"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2508.14925",
+      "https://arxiv.org/abs/2510.15994",
+      "https://arxiv.org/abs/2602.03580"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "mcp_caller_identity_confusion",
+    "name": "MCP Caller Identity Confusion",
+    "category_id": "tool_metadata_and_mcp_poisoning",
+    "execution_phase": "authorization and routing",
+    "target_surface": "identity fields, caller metadata, cross-server context",
+    "attacker_position": "compromised tool or intermediary component",
+    "artifact": "caller labels, identity claims, routed requests",
+    "privileges_sought": "cross-tenant or over-broad access",
+    "redacted_skill_summary": "A tool or intermediary confuses who requested an action, leading the agent or server to authorize work using the wrong principal or scope.",
+    "representative_behaviors": [
+      "user impersonation",
+      "cross-session confusion",
+      "wrong-principal execution"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "mcp_safetybench"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2603.07473",
+      "https://arxiv.org/abs/2512.15163"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "dependency_confusion_skill_package",
+    "name": "Dependency Confusion Skill Package",
+    "category_id": "dependency_supply_chain_poisoning",
+    "execution_phase": "installation and dependency resolution",
+    "target_surface": "package registries and dependency manifests",
+    "attacker_position": "package publisher",
+    "artifact": "package name, version, registry metadata",
+    "privileges_sought": "code execution during install or runtime",
+    "redacted_skill_summary": "A malicious package is positioned so agent-managed installs resolve to the attacker package instead of the intended internal or trusted one.",
+    "representative_behaviors": [
+      "name collision",
+      "registry precedence abuse",
+      "install-time compromise"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "adjacent",
+    "related_benchmarks": [
+      "oscar",
+      "qut_dv25",
+      "synthchain"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2409.09356",
+      "https://arxiv.org/abs/2505.13804",
+      "https://arxiv.org/abs/2603.16694"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "risky_dependency_update_agent",
+    "name": "Risky Dependency Update Skill",
+    "category_id": "dependency_supply_chain_poisoning",
+    "execution_phase": "maintenance and automated updates",
+    "target_surface": "dependency upgrade pull requests and version selection",
+    "attacker_position": "indirect ecosystem manipulation",
+    "artifact": "version constraints, dependency PRs, patch suggestions",
+    "privileges_sought": "introduction of vulnerable or disruptive versions",
+    "redacted_skill_summary": "An autonomous update workflow selects versions that increase exposure or remediation cost even when safer alternatives exist.",
+    "representative_behaviors": [
+      "unsafe version choice",
+      "registry-aware blind spot",
+      "security-regression update"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [],
+    "reference_urls": [
+      "https://arxiv.org/abs/2601.00205"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "system_prompt_policy_override",
+    "name": "System Prompt and Policy Override",
+    "category_id": "config_and_parameter_poisoning",
+    "execution_phase": "configuration and planning",
+    "target_surface": "system prompts, policy files, agent config",
+    "attacker_position": "insider, compromised repo, or upstream config source",
+    "artifact": "prompt file, config blob, hidden policy text",
+    "privileges_sought": "guardrail removal and approval bypass",
+    "redacted_skill_summary": "A poisoned configuration changes the agent policy itself, weakening refusal, approval, or scope constraints before tasks begin.",
+    "representative_behaviors": [
+      "guardrail weakening",
+      "approval removal",
+      "role-policy inversion"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "asb",
+      "backdooragent"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2410.02644",
+      "https://arxiv.org/abs/2601.04566"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "argument_schema_poisoning",
+    "name": "Argument and Schema Poisoning",
+    "category_id": "config_and_parameter_poisoning",
+    "execution_phase": "tool argument construction",
+    "target_surface": "function schemas, default args, parameter hints",
+    "attacker_position": "tool author or compromised integration layer",
+    "artifact": "JSON schema, arg defaults, tool signature metadata",
+    "privileges_sought": "unsafe scope expansion or dangerous defaults",
+    "redacted_skill_summary": "Poisoned parameter defaults or schema descriptions nudge the agent toward a broader or more dangerous action than intended.",
+    "representative_behaviors": [
+      "unsafe default values",
+      "scope expansion through args",
+      "parameter hint manipulation"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "msb",
+      "gap"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2510.15994",
+      "https://arxiv.org/abs/2602.16943"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "adapter_backdoor_trigger",
+    "name": "Adapter or Parameter Backdoor Trigger",
+    "category_id": "config_and_parameter_poisoning",
+    "execution_phase": "model loading and inference",
+    "target_surface": "fine-tuned weights, adapters, poisoned training preferences",
+    "attacker_position": "model provider or compromised training pipeline",
+    "artifact": "adapter checkpoint, poisoned preference data, hidden trigger",
+    "privileges_sought": "conditional unsafe behavior after trigger activation",
+    "redacted_skill_summary": "A hidden trigger embedded in model parameters or alignment data activates unsafe agent behavior only under specific cues.",
+    "representative_behaviors": [
+      "latent trigger activation",
+      "conditional policy inversion",
+      "backdoor-mediated tool misuse"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "adjacent",
+    "related_benchmarks": [
+      "poisonbench",
+      "elba_bench",
+      "backdooragent"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2410.08811",
+      "https://arxiv.org/abs/2502.18511",
+      "https://arxiv.org/abs/2601.04566"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "persistent_memory_seed",
+    "name": "Persistent Memory Seed",
+    "category_id": "memory_and_retrieval_poisoning",
+    "execution_phase": "memory write and later retrieval",
+    "target_surface": "long-term memory, notes, stored plans",
+    "attacker_position": "remote content or previous-session manipulator",
+    "artifact": "memory entry, saved note, prior plan",
+    "privileges_sought": "delayed unsafe execution",
+    "redacted_skill_summary": "A malicious note or plan fragment is planted into memory so that a later, otherwise benign task retrieves and follows it.",
+    "representative_behaviors": [
+      "delayed trigger",
+      "plan replay",
+      "unsafe memory recall"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "backdooragent"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2601.04566",
+      "https://arxiv.org/abs/2505.14215"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "retrieval_corpus_contamination",
+    "name": "Retrieval Corpus Contamination",
+    "category_id": "memory_and_retrieval_poisoning",
+    "execution_phase": "retrieval and grounding",
+    "target_surface": "RAG corpora, search results, retrieved files",
+    "attacker_position": "content publisher or indexing adversary",
+    "artifact": "retrieved snippet, indexed document, search result",
+    "privileges_sought": "unsafe guidance via trusted retrieval",
+    "redacted_skill_summary": "Retrieved content is treated as trustworthy context and quietly degrades safety by biasing plans, actions, or approvals.",
+    "representative_behaviors": [
+      "unsafe retrieval grounding",
+      "context poisoning",
+      "trusted-source abuse"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "ras_eval"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2505.14215",
+      "https://arxiv.org/abs/2506.15253"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "overprivileged_os_action_chain",
+    "name": "Overprivileged OS Action Chain",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "tool execution",
+    "target_surface": "desktop, filesystem, browser, shell, admin actions",
+    "attacker_position": "malicious user request or hijacked workflow",
+    "artifact": "tool command sequence, GUI actions",
+    "privileges_sought": "irreversible system-side effects",
+    "redacted_skill_summary": "A high-privilege tool chain performs destructive or security-sensitive operations that exceed the original task scope.",
+    "representative_behaviors": [
+      "sensitive setting change",
+      "credential exposure path",
+      "unsafe file or system modification"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "os_harm"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2506.14866",
+      "https://arxiv.org/abs/2508.00935",
+      "https://arxiv.org/abs/2509.07764"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "computer_use_data_exfiltration_chain",
+    "name": "Computer-Use Data Exfiltration Chain",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "cross-app execution",
+    "target_surface": "browser, clipboard, filesystem, messaging, cloud drives",
+    "attacker_position": "hybrid web-OS adversary or malicious task framing",
+    "artifact": "multi-app workflow and sensitive local data",
+    "privileges_sought": "collection and transfer of confidential information",
+    "redacted_skill_summary": "A cross-application workflow causes the agent to read sensitive local or remote data and move it into an attacker-controlled sink.",
+    "representative_behaviors": [
+      "sensitive file collection",
+      "cross-app copy or upload",
+      "exfiltration through normal tools"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [],
+    "reference_urls": [
+      "https://arxiv.org/abs/2505.21936",
+      "https://arxiv.org/abs/2601.08406"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "regulated_domain_action_abuse",
+    "name": "Regulated-Domain Action Abuse",
+    "category_id": "high_privilege_tool_misuse",
+    "execution_phase": "decision and execution",
+    "target_surface": "finance, healthcare, legal, government, enterprise tools",
+    "attacker_position": "malicious user or compromised workflow",
+    "artifact": "tool call with high-consequence side effects",
+    "privileges_sought": "unsafe action completion in sensitive domains",
+    "redacted_skill_summary": "The agent performs materially consequential actions in regulated or high-stakes settings without adequate policy checks or human approval.",
+    "representative_behaviors": [
+      "policy-violating execution",
+      "unsafe task completion in regulated domains",
+      "text-safe but tool-unsafe behavior"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "gap",
+      "eu_agent_bench"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2602.16943",
+      "https://arxiv.org/abs/2510.21524"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "harmful_multi_step_operator",
+    "name": "Harmful Multi-Step Operator",
+    "category_id": "harmful_task_misuse_and_jailbreaks",
+    "execution_phase": "task decomposition and execution",
+    "target_surface": "general tool-using agent workflows",
+    "attacker_position": "malicious user",
+    "artifact": "multi-step plan, sequenced tool calls",
+    "privileges_sought": "completion of harmful end goals over several steps",
+    "redacted_skill_summary": "The agent remains compliant across a sequence of individually plausible steps that collectively implement a harmful objective.",
+    "representative_behaviors": [
+      "harmful task planning",
+      "stepwise escalation",
+      "low-refusal multi-step execution"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "agentharm",
+      "safearena"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2410.09024",
+      "https://arxiv.org/abs/2503.04957"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "cybersecurity_offense_workflow",
+    "name": "Cybersecurity Offense Workflow",
+    "category_id": "harmful_task_misuse_and_jailbreaks",
+    "execution_phase": "specialized tool use",
+    "target_surface": "codebases, services, vulnerability workflows",
+    "attacker_position": "malicious user or offensive benchmark operator",
+    "artifact": "detect/exploit/patch workflow",
+    "privileges_sought": "security-impacting offensive capability",
+    "redacted_skill_summary": "An agent chains analysis and tool use to pursue offensive cybersecurity goals; this entry remains metadata-only and omits exploit details.",
+    "representative_behaviors": [
+      "vulnerability hunt workflow",
+      "offense-defense dual use",
+      "security-impacting task completion"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [],
+    "reference_urls": [
+      "https://arxiv.org/abs/2505.15216",
+      "https://doi.org/10.31219/osf.io/36jm5_v1"
+    ],
+    "status": "redacted_public_pattern"
+  },
+  {
+    "id": "delegation_hijack_peer_agent",
+    "name": "Delegation Hijack via Peer Agent",
+    "category_id": "multi_agent_adversarial_manipulation",
+    "execution_phase": "delegation and inter-agent messaging",
+    "target_surface": "multi-agent task routing and peer messages",
+    "attacker_position": "compromised peer agent",
+    "artifact": "delegation message, shared context, peer output",
+    "privileges_sought": "unsafe action execution by another agent",
+    "redacted_skill_summary": "A compromised or adversarial peer agent manipulates another agent into taking harmful actions through the delegation channel.",
+    "representative_behaviors": [
+      "peer instruction poisoning",
+      "cross-agent coercion",
+      "unsafe delegated execution"
+    ],
+    "payload_included": false,
+    "live_code_included": false,
+    "evidence_basis": "direct",
+    "related_benchmarks": [
+      "bad_acts"
+    ],
+    "reference_urls": [
+      "https://arxiv.org/abs/2508.16481",
+      "https://arxiv.org/abs/2511.05269"
+    ],
+    "status": "redacted_public_pattern"
+  }
+]
