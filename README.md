@@ -89,24 +89,69 @@ Even after expanding the catalog, several gaps remain under-covered:
 - long-horizon memory poisoning where the trigger is planted many steps before execution
 - benchmark-contamination resistant leaderboards with hidden test sets for agent security
 
-## Suggested repo roadmap
+## Repo layout
 
-If this repo grows beyond a catalog, the next useful directories are:
+The repo now includes both a top-level catalog and category-specific indices:
 
 ```text
 benchmarks/
-  prompt-injection/
-  tool-metadata-poisoning/
-  dependency-poisoning/
-  config-parameter-poisoning/
-  memory-poisoning/
-  privileged-tool-use/
-  multi-agent/
+  README.md
+  prompt_injection_and_task_hijacking/
+  tool_metadata_and_mcp_poisoning/
+  dependency_supply_chain_poisoning/
+  config_and_parameter_poisoning/
+  memory_and_retrieval_poisoning/
+  high_privilege_tool_misuse/
+  harmful_task_misuse_and_jailbreaks/
+  multi_agent_adversarial_manipulation/
+  benchmark_coverage_and_meta_audit/
 
 data/
+  benchmark_catalog.csv
   benchmark_catalog.json
   category_schema.json
+  leaderboard_columns.csv
+  leaderboard_schema.json
+  leaderboard_template.csv
 ```
+
+Notes:
+- `benchmarks/README.md` is the category index.
+- Each `benchmarks/<category>/README.md` file lists the mapped benchmarks for that family.
+- `data/benchmark_catalog.json` is the canonical machine-readable source.
+- `data/benchmark_catalog.csv` is the flat export for spreadsheets or quick filtering.
+- `data/leaderboard_schema.json` defines a normalized run-result schema.
+- `data/leaderboard_template.csv` gives a starter row for recording evals.
+
+## How to extend it
+
+When adding a new benchmark:
+- add or update the canonical entry in `data/benchmark_catalog.json`
+- mirror the flat row in `data/benchmark_catalog.csv`
+- map it into one or more category docs under `benchmarks/`
+- if you publish evaluation results, append them using `data/leaderboard_template.csv`
+
+## Leaderboard fields
+
+The leaderboard schema is intentionally generic so it can support agent, MCP, plugin, and adjacent supply-chain evaluations.
+
+Recommended minimum fields:
+- `run_id`
+- `benchmark_id`
+- `category_id`
+- `model_name`
+- `run_date`
+- `metric_primary`
+- `score_primary`
+- `success_direction`
+
+Optional but useful reproducibility fields:
+- `agent_framework`
+- `tool_runtime`
+- `defense_profile`
+- `dataset_version`
+- `commit_or_image`
+- `source_url`
 
 ## Source map
 

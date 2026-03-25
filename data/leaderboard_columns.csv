@@ -1,0 +1,21 @@
+name,type,required,description
+run_id,string,true,Unique identifier for one benchmark execution run.
+benchmark_id,string,true,Identifier from data/benchmark_catalog.json or an extension benchmark.
+category_id,string,true,Primary taxonomy bucket used for aggregation.
+benchmark_split,string,false,"Public, private, dev, test, heldout, or custom split."
+model_name,string,true,Base model name.
+model_provider,string,false,Provider or organization behind the model.
+agent_framework,string,false,Agent framework or runtime used in the evaluation.
+tool_runtime,string,false,"Tool runtime, MCP host, browser stack, or sandbox implementation."
+defense_profile,string,false,"Active safety defense, guardrail, or hardening profile."
+dataset_version,string,false,Version tag of the benchmark dataset.
+commit_or_image,string,false,"Git commit, container image, or release tag for reproducibility."
+run_date,date,true,Execution date in ISO 8601 format.
+metric_primary,string,true,"Name of the main reported metric such as ASR, harmful success, or safe completion."
+score_primary,number,true,Value of the main metric.
+metric_secondary,string,false,Optional secondary metric name.
+score_secondary,number,false,Optional secondary metric value.
+sample_count,integer,false,Number of evaluated samples or episodes.
+success_direction,string,true,Interpretation of the primary metric.
+notes,string,false,"Short notes on evaluator settings, exclusions, or caveats."
+source_url,string,false,"Link to paper, run log, or reproducibility artifact."

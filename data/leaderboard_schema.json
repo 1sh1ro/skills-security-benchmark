@@ -1,0 +1,131 @@
+{
+  "name": "skills-security-benchmark leaderboard schema",
+  "version": "1.0.0",
+  "description": "Normalized schema for recording benchmark runs across agent-security evaluations.",
+  "fields": [
+    {
+      "name": "run_id",
+      "type": "string",
+      "required": true,
+      "description": "Unique identifier for one benchmark execution run."
+    },
+    {
+      "name": "benchmark_id",
+      "type": "string",
+      "required": true,
+      "description": "Identifier from data/benchmark_catalog.json or an extension benchmark."
+    },
+    {
+      "name": "category_id",
+      "type": "string",
+      "required": true,
+      "description": "Primary taxonomy bucket used for aggregation."
+    },
+    {
+      "name": "benchmark_split",
+      "type": "string",
+      "required": false,
+      "description": "Public, private, dev, test, heldout, or custom split."
+    },
+    {
+      "name": "model_name",
+      "type": "string",
+      "required": true,
+      "description": "Base model name."
+    },
+    {
+      "name": "model_provider",
+      "type": "string",
+      "required": false,
+      "description": "Provider or organization behind the model."
+    },
+    {
+      "name": "agent_framework",
+      "type": "string",
+      "required": false,
+      "description": "Agent framework or runtime used in the evaluation."
+    },
+    {
+      "name": "tool_runtime",
+      "type": "string",
+      "required": false,
+      "description": "Tool runtime, MCP host, browser stack, or sandbox implementation."
+    },
+    {
+      "name": "defense_profile",
+      "type": "string",
+      "required": false,
+      "description": "Active safety defense, guardrail, or hardening profile."
+    },
+    {
+      "name": "dataset_version",
+      "type": "string",
+      "required": false,
+      "description": "Version tag of the benchmark dataset."
+    },
+    {
+      "name": "commit_or_image",
+      "type": "string",
+      "required": false,
+      "description": "Git commit, container image, or release tag for reproducibility."
+    },
+    {
+      "name": "run_date",
+      "type": "date",
+      "required": true,
+      "description": "Execution date in ISO 8601 format."
+    },
+    {
+      "name": "metric_primary",
+      "type": "string",
+      "required": true,
+      "description": "Name of the main reported metric such as ASR, harmful success, or safe completion."
+    },
+    {
+      "name": "score_primary",
+      "type": "number",
+      "required": true,
+      "description": "Value of the main metric."
+    },
+    {
+      "name": "metric_secondary",
+      "type": "string",
+      "required": false,
+      "description": "Optional secondary metric name."
+    },
+    {
+      "name": "score_secondary",
+      "type": "number",
+      "required": false,
+      "description": "Optional secondary metric value."
+    },
+    {
+      "name": "sample_count",
+      "type": "integer",
+      "required": false,
+      "description": "Number of evaluated samples or episodes."
+    },
+    {
+      "name": "success_direction",
+      "type": "string",
+      "required": true,
+      "enum": [
+        "higher_is_better",
+        "lower_is_better"
+      ],
+      "description": "Interpretation of the primary metric."
+    },
+    {
+      "name": "notes",
+      "type": "string",
+      "required": false,
+      "description": "Short notes on evaluator settings, exclusions, or caveats."
+    },
+    {
+      "name": "source_url",
+      "type": "string",
+      "required": false,
+      "description": "Link to paper, run log, or reproducibility artifact."
+    }
+  ]
+}
